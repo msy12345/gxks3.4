@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="info1">
+			你的分数是：{{myScore}}
+			<p v-if="myScore>=90 && myScore<90">等级是优秀</p>
+			<p v-if="myScore>=80">等级是良好</p>
+			<p v-if="myScore>=90">等级是中等</p>
+			<p v-if="myScore>=90">等级是及格</p>
+			<p v-if="myScore>=90">等级是不及格</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let a=new Vue({
+				el:'#info1',
+				data:{
+					myScore:66
+				}
+			})
+		</script>
+	</body>
+</html>
