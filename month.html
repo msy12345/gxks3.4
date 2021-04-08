@@ -1,0 +1,26 @@
+<!--获取月份天数-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>获取月份天数</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		请输入一个月份:
+		<div id="app">
+			<input v-model="message" type="text" name="" id="" value=""/><br />
+			你输入的是{{message}}月，有{{month[message-1]}}天
+		</div>
+		<script type="text/javascript">
+			var v=new Vue({
+				el:'#app',
+				data:{
+					message:'', //此处可输入默认的月份
+					month:[31,28,31,30,31,30,31,31,30,31,30,31]
+				}
+			})
+		</script>
+	</body>
+</html>
