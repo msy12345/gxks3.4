@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>国家代号查询器</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="number" name="" id="" value="" />
+			{{number}}
+			<div v-for="country in countrys">
+				<div v-if="number==country.code">
+					国家：{{country.name}}<br />
+					首都：{{country.city}}<br>
+					代号：{{country.code}}<br>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					number:'',
+					countrys:[
+						{name:'中国',city:'北京',code:'86'},
+						{name:'日本',city:'东京',code:'81'},
+						{name:'韩国',city:'首尔',code:'82'},
+						{name:'美国',city:'华盛顿',code:'1'},
+						{name:'俄罗斯',city:'莫斯科',code:'7'},
+						{name:'法国',city:'巴黎',code:'33'},
+						{name:'西班牙',city:'马德里',code:'34'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

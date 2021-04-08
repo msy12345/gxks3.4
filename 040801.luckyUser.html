@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>幸运用户抽奖程序</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" @click="rdm=Math.ceil(Math.random()*10+1)%5;chooseUser=users[rdm]" name="" id="" value="请点击" /><br>
+			序号：{{chooseUser.code}}<br>
+			姓名：{{chooseUser.name}}<br>
+			性别：{{chooseUser.sex}}<br>
+			年龄：{{chooseUser.age}}<br>
+			<div v-for="user in users">
+			
+			</div>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					rdm:'',
+					chooseUser:'',
+					users:[
+						{name:'张三',sex:'男',code:'1',age:'19'},
+						{name:'李四',sex:'男',code:'2',age:'24'},
+						{name:'王五',sex:'女',code:'3',age:'27'},
+						{name:'赵六',sex:'男',code:'4',age:'16'},
+						{name:'小明',sex:'女',code:'5',age:'18'},
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
